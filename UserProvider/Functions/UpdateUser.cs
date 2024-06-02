@@ -18,7 +18,7 @@ namespace UserProvider.Functions
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = "updateuser/{id}")] HttpRequest req,
             string id)
         {
-            _logger.LogInformation("C# HTTP trigger function processed a request.");
+            _logger.LogInformation("Processed a request to update user.");
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var data = JsonConvert.DeserializeObject<ApplicationUser>(requestBody);
